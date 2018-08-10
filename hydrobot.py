@@ -29,7 +29,10 @@ client = discord.Client()
 Server = discord.Server
 query = Query()
 
-hydroBotToken = open("token.txt").readlines()[0]
+with open("token.txt") as tokenfile:
+    hydroBotToken = tokenfile.readlines()[0]
+    tokenfile.close()
+
 
 
 hydroBot = cms.Bot(command_prefix="-")

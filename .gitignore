@@ -142,3 +142,8 @@ tinydb/tinydb/utils.py
 tinydb/tinydb/version.py
 tinydb/tox.ini
 token.txt
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/Hydrobot.iml

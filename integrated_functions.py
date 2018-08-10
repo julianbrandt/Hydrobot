@@ -8,7 +8,7 @@ client = discord.Client()
 Server = discord.Server
 
 def folder_init():
-    folders = ["litcoin", "level", "notifications"]
+    folders = ["litcoin", "level", "notifications", "imagesaving"]
     for i in folders:
         try:
             os.stat(i)
