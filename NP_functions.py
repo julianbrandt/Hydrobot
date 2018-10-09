@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import math
 from random import randint
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import ast
 from numpy import cos, sin, tan, arccos, arcsin, arctan
@@ -43,7 +43,7 @@ def input_auth(string):
             return False
     return True
 
-
+"""
 def input_func(func, minrange, maxrange):
     auth = input_auth(func)
     if not auth:
@@ -79,7 +79,7 @@ def input_func(func, minrange, maxrange):
     plt.savefig(imagename)
     return imagename
 
-"""
+
     if minrange is None:
         minrange = -5
         maxrange = 5

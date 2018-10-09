@@ -3,10 +3,10 @@
 
 import math
 from random import randint
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from math import sqrt, pi, e
 
-
+"""
 def plot_dataset(style="point", set1="", set2=""):
     plt.cla()
     plt.clf()
@@ -38,7 +38,7 @@ def plot_dataset(style="point", set1="", set2=""):
     imagename = "imagesaving/" + str(randint(1000000000, 9999999999)) + ".png"
     plt.savefig(imagename)
     return imagename
-
+"""
 
 def cosdeg(number):
     return round(math.cos(math.radians(number)), 6)

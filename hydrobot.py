@@ -22,9 +22,6 @@ import glob
 import time
 import os
 
-if not discord.opus.is_loaded():
-    discord.opus.load_opus('opus')
-
 client = discord.Client()
 Server = discord.Server
 query = Query()
@@ -319,6 +316,10 @@ async def meme(ctx, template="", *args):
     if notifications_closed("meme", ctx.message.server, ctx.message.channel):
         return await hydroBot.say("`meme` is not allowed in `" + ctx.message.channel.name + "`")
 
+    for i in args:
+        if len(i) > 200:
+            return await hydroBot.say("Text cannot be longer than 200 characters")
+
     if template in ["metome", "mealsome", "mtm"]:
         if notifications_closed("metome", ctx.message.server, ctx.message.channel):
             return await hydroBot.say("`metome` is not allowed in `" + ctx.message.channel.name + "`")
@@ -447,7 +448,7 @@ async def math(*args):
         return await hydroBot.say("Error in calculation. Check your input")
     return await hydroBot.say(calcualtion)
 
-
+"""
 @hydroBot.command(pass_context=True)
 async def plot(ctx, style, *args):
     if style in ["point", "line", "dash"]:
@@ -456,8 +457,8 @@ async def plot(ctx, style, *args):
         os.remove(display)
     else:
         return await hydroBot.say("`Error in input`")
-
-
+"""
+"""
 @hydroBot.command(pass_context=True)
 async def plotf(ctx, *args):
     equation = args[0]
@@ -486,7 +487,7 @@ async def plotf(ctx, *args):
         return await hydroBot.say("`Error in input`")
     await hydroBot.send_file(ctx.message.channel, display)
     os.remove(display)
-
+"""
 
 @hydroBot.command()
 async def timezone(zone, commandtype=None):
@@ -506,7 +507,7 @@ async def play(ctx, link=""):
 
 @hydroBot.command()
 async def help():
-    return await hydroBot.say("help")
+    return await hydroBot.say("You can find the Hydro Bot docs here: http://julianbrandt.dk/hydrobot/commands")
 
 
 @hydroBot.command(pass_context=True)
