@@ -281,7 +281,7 @@ async def notifications(ctx, command="", option=""):
     channel = ctx.message.channel
     server = ctx.message.server
     notificationlist = TinyDB("notifications/NOTIFICATIONS" + server.id + ".json")
-    commandlist = ["test", "litcoin", "level", "gamba", "balance", "shop", "transfer", "music", "meme", "metome", "itsretarded", "itstime", "classnote", "headache", "firstword"]
+    commandlist = ["test", "litcoin", "level", "gamba", "balance", "shop", "transfer", "music", "meme", "metome", "itsretarded", "itstime", "classnote", "headache", "firstword", "nutbutton", "swu_uok"]
     notifications = notification_get(server, channel)
     if command == "view":
         return await hydroBot.say(notificationlist.all())
@@ -326,7 +326,6 @@ async def meme(ctx, template="", *args):
         image = mealsome_function(args[0], args[1])
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
-        return None
 
     elif template in ["itsretarded", "retarded", "ir"]:
         if notifications_closed("itsretarded", ctx.message.server, ctx.message.channel):
@@ -337,7 +336,6 @@ async def meme(ctx, template="", *args):
         image = itsretarded_function(text1)
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
-        return None
 
     elif template in ["headache", "stress", "ha"]:
         if notifications_closed("headache", ctx.message.server, ctx.message.channel):
@@ -348,7 +346,6 @@ async def meme(ctx, template="", *args):
         image = headache_function(text1)
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
-        return None
 
     elif template in ["note", "classnote", "cheatsheet", "cn"]:
         if notifications_closed("classnote", ctx.message.server, ctx.message.channel):
@@ -359,7 +356,6 @@ async def meme(ctx, template="", *args):
         image = classnote_function(text1)
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
-        return None
 
     elif template in ["itstime", "goofy", "goofytime", "gt", "it"]:
         if notifications_closed("itstime", ctx.message.server, ctx.message.channel):
@@ -368,6 +364,7 @@ async def meme(ctx, template="", *args):
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
 
+
     elif template in ["firstword", "firstwords", "fw"]:
         if notifications_closed("firstword", ctx.message.server, ctx.message.channel):
             return await hydroBot.say("`firstword` is not allowed in `" + ctx.message.channel.name + "`")
@@ -375,6 +372,23 @@ async def meme(ctx, template="", *args):
         for i in args:
             text1 += i + " "
         image = firstword_function(text1)
+        await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
+        os.remove("imagesaving/" + image + ".png")
+
+    elif template in ["nutbutton", "button", "nb"]:
+        if notifications_closed("nutbutton", ctx.message.server, ctx.message.channel):
+            return await hydroBot.say("`nutbutton` is not allowed in `" + ctx.message.channel.name + "`")
+        text1 = ""
+        for i in args:
+            text1 += i + " "
+        image = nutbutton_function(text1)
+        await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
+        os.remove("imagesaving/" + image + ".png")
+
+    elif template in ["swu_uok"]:
+        if notifications_closed("swu_uok", ctx.message.server, ctx.message.channel):
+            return await hydroBot.say("`swu_uok` is not allowed in `" + ctx.message.channel.name + "`")
+        image = swu_uok_function(args[0], args[1])
         await hydroBot.send_file(ctx.message.channel, "imagesaving/" + image + ".png")
         os.remove("imagesaving/" + image + ".png")
 

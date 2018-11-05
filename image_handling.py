@@ -170,18 +170,58 @@ def firstword_function(text1=""):
     img.save("imagesaving/" + imagename + '.png')
     return imagename
 
-def change_contrast(img, level):
-    factor = (259 * (level + 255)) / (255 * (259 - level))
-    def contrast(c):
-        return 128 + factor * (c - 128)
-    return img.point(contrast)
 
+def nutbutton_function(text1=""):
+    ypos = 0
+    if len(text1) <= 5:
+        font1_size = 72
+        ypos = 15
+    else:
+        font1_size = 48
 
-def contrast_function(img):
-    change_contrast(Image.open(img), 200)
+    img = Image.open("imagelibrary/nutbutton.jpg")
+    font = ImageFont.truetype("arial.ttf", font1_size)
+    img = img.rotate(10, expand=True)
+    draw = ImageDraw.Draw(img)
+
+    returntext = splitLine(font, text1, 175)
+
+    draw.text((133, 300+ypos), returntext, (255, 255, 255), font=font)
+    img = img.rotate(-10)
+
     imagename = str(randint(1000000000, 9999999999))
-    img.save("imagesaving/" + imagename + ".jpg")
+    img = img.crop((33, 47, 600, 446))
+
+    img.save("imagesaving/" + imagename + '.png')
     return imagename
 
 
+def swu_uok_function(text1="", text2=""):
+    xpos1 = 100
+    xpos2 = 100
+    ypos1 = 0
+    ypos2 = 0
+    if len(text1) > 8:
+        xpos1 = 20
+    if len(text2) > 8:
+        xpos2 = 20
 
+    if len(text1) > 20:
+        ypos1 = -80
+    if len(text2) > 20:
+        ypos2 = -80
+
+    img = Image.open("imagelibrary/swu_uok.png")
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype("arial.ttf", 36)
+
+    returntext = splitLine(font, text1, 220)
+    returntext2 = splitLine(font, text2, 220)
+
+    draw.text((xpos1, 102 + ypos1), returntext, (0, 0, 0), font=font)
+    draw.text((xpos2, 380 + ypos2), returntext2, (0, 0, 0), font=font)
+
+    imagename = str(randint(1000000000, 9999999999))
+
+    img.save("imagesaving/" + imagename + '.png')
+    return imagename
