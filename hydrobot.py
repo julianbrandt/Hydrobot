@@ -316,9 +316,12 @@ async def meme(ctx, template="", *args):
     if notifications_closed("meme", ctx.message.server, ctx.message.channel):
         return await hydroBot.say("`meme` is not allowed in `" + ctx.message.channel.name + "`")
 
+    text = ""
     for i in args:
-        if len(i) > 200:
-            return await hydroBot.say("Text cannot be longer than 200 characters")
+        text += i
+
+    if len(text) > 200:
+        return await hydroBot.say("Text cannot be longer than 200 characters")
 
     if template in ["metome", "mealsome", "mtm"]:
         if notifications_closed("metome", ctx.message.server, ctx.message.channel):
