@@ -26,8 +26,8 @@ def splitLine(font, text, width):
                             textconvert = textconvert[l + 1:]
                             break
                 break
-    if returntext[:0] == "-":
-        returntext = returntext[:-1]
+    if returntext[-3] == "-":
+        returntext = returntext[:-3]
     return returntext
 
 
