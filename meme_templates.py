@@ -46,7 +46,7 @@ MEME_TEMPLATES = [
         'classnote.png'
     ),
     MemeTemplate(
-        'button',
+        'nutbutton',
         'Button',
         [True],
         'nutbutton.jpg'
@@ -100,7 +100,7 @@ MEME_TEMPLATES = [
         'cliff.jpg'
     ),
     MemeTemplate(
-        'handshake',
+        'predatorhandshake',
         'Predator handshake',
         [True, True, True],
         'handshake.gif'

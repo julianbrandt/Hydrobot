@@ -1,4 +1,4 @@
-
+__pycache__/
 __pycache__/connect4_functions.cpython-36.pyc
 __pycache__/image_handling.cpython-36.pyc
 __pycache__/integrated_functions.cpython-36.pyc
@@ -151,3 +151,4 @@ token.txt.old
 venv/
 .venv/
 .env
+__pycache__
