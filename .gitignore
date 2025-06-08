@@ -148,3 +148,6 @@ token.txt
 .idea/misc.xml
 .idea/Hydrobot.iml
 token.txt.old
+venv/
+.venv/
+.env

@@ -1,5 +1,21 @@
 # Hydrobot
 
-Discord chat-bot written in python 3.6. Its main features are meme-generators and minigames.
+A discord chatbot for generating memes from predefined templates.
 
-Add the bot to your server using this link: https://discordapp.com/oauth2/authorize?client_id=302003797402845184&scope=bot&permissions=0
+## Install and run
+
+```bash
+git clone https://github.com/julianbrandt/Hydrobot && cd Hydrobot
+
+python3 -m venv .venv
+source ./.venv/bin/activate
+pip install -r requirements.txt
+echo "HYDROBOT_TOKEN=your_discord_bot_token" > ".env"
+
+python hydrobot.py
+```
+
+## Commands
+
+Current slash-commands:
+* `meme_<template>` where `<template>` is replaced with the name of the template. You can browse the available templates through autocomplete, or in `meme_templates.py`
