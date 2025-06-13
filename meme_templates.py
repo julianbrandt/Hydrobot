@@ -122,5 +122,41 @@ MEME_TEMPLATES = [
         'Winnie the Pooh hate',
         [True],
         'hate.png'
+    ),
+    MemeTemplate(
+        'bellcurve',
+        'Midwit bell curve',
+        [True, True, True],
+        'bellcurve.jpg'
+    ),
+    MemeTemplate(
+        'trump',
+        'Trump executive order signing',
+        [True],
+        'trump.jpg'
+    ),
+    MemeTemplate(
+        'butgodsaid',
+        'What if you ... but god said ...',
+        [True, True],
+        'butgodsaid.jpg'
+    ),
+    MemeTemplate(
+        'yeshoney',
+        'Yes honey',
+        [True],
+        'yeshoney.jpg',
+    ),
+    MemeTemplate(
+        'lookup',
+        'Willem Dafoe looking up',
+        [True],
+        'lookup.gif'
+    ),
+    MemeTemplate(
+        'tradeoffer',
+        'Trade offer',
+        [True, True, False],
+        'tradeoffer.jpg'
     )
 ]
